@@ -1,4 +1,4 @@
-import { sum, getQuote } from './businessLogic'
+import { sum, getQuote, getBearerToken } from './businessLogic'
 
 it('computes the sum of two numbers', async () => {
   const a = 1
@@ -8,6 +8,19 @@ it('computes the sum of two numbers', async () => {
 })
 
 it('gets a quote from an external api', async () => {
-  const quote = await getQuote()
-  expect(typeof quote).toBe('string')
+  const quotes: string[] = []
+  for (let i = 0; i < 50; i++) {
+    const quote = await getQuote()
+    quotes.push(quote)
+  }
+  expect(Array.isArray(quotes)).toBe(true)
+  expect(quotes.length).toEqual(50)
+}, 50000)
+
+// https://docs.leanix.net/docs/authentication
+it('gets a bearer token from an apitoken', async () => {
+  const apitoken = ''
+  const instance = ''
+  const bearerToken = await getBearerToken(apitoken, instance)
+  expect(typeof bearerToken).toBe('string')
 })

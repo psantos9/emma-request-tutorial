@@ -18,3 +18,7 @@ export const getQuote = async (): Promise<string> => { // runs asynchronously
   const quote = quotes.at(0)?.q ?? 'got no quote!'
   return quote
 }
+
+const getBearerToken = async (apitoken: string, host: string): Promise<string> => {
+  
+}
