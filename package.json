@@ -1,17 +1,17 @@
 {
-  "name": "script-zendesk-ticket-73263",
+  "name": "emma-request-tutorial",
   "version": "1.0.0",
-  "description": "This script implements the customer requirements specified by ticket #73263",
+  "description": "Tutorial about making requests using javascript",
   "main": "index.js",
   "files": [
     "src/*"
   ],
-   "engines" : { 
+   "engines" : {
     "node" : ">=18"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/leanix-public/script-zendesk-ticket-73263.git"
+    "url": "git@github.com:psantos9/emma-request-tutorial.git"
   },
   "scripts": {
     "clean": "rimraf ./dist ./package *.tgz",
